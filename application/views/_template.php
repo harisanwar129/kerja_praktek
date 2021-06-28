@@ -216,12 +216,7 @@
                                 </ul>
                             </li>
                             <li class="treeview <?= $this->uri->segment(1) == 'report' ? 'active' : null ?>">
-                            <a href="#">
-                                <i class="fa fa-pie-chart"></i> <span>Laporan</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
+                            
                          
                           
                                     <li class="<?= $this->uri->segment(1) == 'report'
