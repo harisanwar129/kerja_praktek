@@ -222,20 +222,16 @@
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
                             </a>
-                            <ul class="treeview-menu">
+                         
                           
                                     <li class="<?= $this->uri->segment(1) == 'report'
                                                     && $this->uri->segment(2) == 'sale' ? 'active' : null ?>">
                                         <a href="<?= site_url('report/sale') ?>"><i class="fa fa-pie-chart"></i> Laporan Penjualan</a>
                                     </li>
                                     
-                                    <li class="<?= $this->uri->segment(1) == 'report'
-                                                && $this->uri->segment(2) == 'stock' ? 'active' : null ?>">
-                                    <a href="<?= site_url('report/stock') ?>"><i class="fa fa-pie-chart"></i> Laporan Persediaan</a>
-                                </li>
+                                   
                         <?php } ?>
-        </ul>
-        </li>
+       
                     </ul>
                 </section>
             </aside>
