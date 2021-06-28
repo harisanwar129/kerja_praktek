@@ -20,7 +20,7 @@
                         <div class="col-md-4">
                                 <div class="form-horizontal">
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">Date</label>
+                                        <label class="col-sm-3 control-label">Tanggal</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="date1" id="date1" value="<?= @$post['date1'] ?>" class="form-control">
                                         </div>
@@ -58,7 +58,7 @@
                                         Ulangi
                                     </button>
                                     <button type="submit" name="filter" class="btn btn-info btn-flat">
-                                        <i class="fa fa-search"></i> Filter
+                                        <i class="fa fa-search"></i> Cari
                                     </button>
                                 </div>
                             </div>

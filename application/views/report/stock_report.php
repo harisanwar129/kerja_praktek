@@ -1,11 +1,9 @@
 <section class="content-header">
-    <h1><?= ucwords($title) ?>
-        <small>Laporan Stock Barang</small>
+    <h1>Bukti Persediaan
     </h1>
     <ol class="breadcrumb">
         <li><a><i class="fa fa-dashboard"></i></a></li>
-        <li><a>Reports</a></li>
-        <li class="active"><?= ucwords($title) ?></li>
+        <li class="active">Laporan Persediaan</li>
     </ol>
 </section>
 
@@ -26,7 +24,7 @@
                             <div class="col-md-6">
                                 <div class="form-horizontal">
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">category</label>
+                                        <label class="col-sm-3 control-label">Kategori</label>
                                         <div class="col-sm-9">
                                             <select name="kategori" id="category" class="form-control">
                                                 <option value="">- All -</option>
@@ -43,7 +41,7 @@
                             <div class="col-md-6">
                                 <div class="form-horizontal">
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">name</label>
+                                        <label class="col-sm-3 control-label">Nama</label>
                                         <div class="col-sm-9">
                                             <input type="text" name="name" value="<?= @$post['name'] ?>" class="form-control">
                                         </div>
@@ -56,10 +54,10 @@
                             <div class="col-md-12">
                                 <div class="pull-right">
                                     <button type="submit" name="reset" class="btn btn-flat">
-                                        Reset
+                                        Ulangi
                                     </button>
                                     <button type="submit" name="filter" class="btn btn-info btn-flat">
-                                        <i class="fa fa-search"></i> Filter
+                                        <i class="fa fa-search"></i> Cari
                                     </button>
                                 </div>
                             </div>
@@ -82,18 +80,21 @@
                         <thead>
                             <tr>
                                 <th class="text-center">No</th>
-                                <th class="text-center">Barcode</th>
+                                <th class="text-center">Kode Barang</th>
                                 <th class="text-center">Nama Barang</th>
                                 <th class="text-center">Satuan</th>
                                 <th class="text-center">Kategori</th>
-                                <th class="text-center">Stock</th>
+                                <th class="text-center">Persediaan</th>
                                 <th class="text-center">Harga</th>
                                 <th class="text-center">Aksi</th>
 
                             </tr>
                         </thead>
                         <tbody>
+                        <?php?>
+                        
                             <?php $no = $this->uri->segment(3) ? $this->uri->segment(3) + 1 : 1;
+                           if($row->num_rows() > 0) {
                             foreach ($row->result() as $r => $data) { ?>
                                 <tr>
                                     <td width="35px"><?= $no++ ?>.</td>
@@ -111,7 +112,10 @@
                                     </td>
 
                                 </tr>
-                            <?php } ?>
+                                <?php }
+    } else {
+        echo '<tr><td colspan="8" align="center">Data tidak ditemukan</td></tr>';
+    } ?>
                            
                         </tbody>
                     </table>
@@ -139,9 +143,9 @@
                 <table class="table table-bordered no-margin">
                     <tbody>
                         <tr>
-                            <th style="width:20%">name</th>
+                            <th style="width:20%">Nama</th>
                             <td style="width:30%"><span id="name"></span></td>
-                            <th style="width:20%">category</th>
+                            <th style="width:20%">Kategori</th>
                             <td style="width:30%"><span id="cust"></span></td>
                         </tr>
 
